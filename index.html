@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BMI Calculator</title>
+
+
+<style>
+	.background{
+		background: linear-gradient(80deg, rgb(244,122,85),rgb(204,77,88));
+		margin: 0px;
+		padding: 0px;
+	}
+	.sec1{
+		position: relative;
+		left:300px;
+		top:100px;
+		padding: 0px;
+		height:500px;
+		width: 350px;
+		text-align: center;
+		background: linear-gradient(to bottom, rgb(242,92,42),rgb(192,31,46));
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+	}
+	.sec2{
+		position: absolute;
+		top:100px;
+		left:700px;
+		padding: 0px;
+		height:500px;
+		width: 350px;
+		text-align: center;
+		background: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+	}
+	.bmi{
+		position: absolute;
+		top:5px;
+		left:10px;
+		margin:0px;
+		padding: 0px;
+		font-size: 100px;
+		color: white;
+	
+	}
+	.cal{
+		position: absolute;
+		top:100px;
+		left:60px;
+		margin:0px;
+		padding: 0px;
+		font-size: 50px;
+		color: white;
+		font-weight: lighter;
+	}
+	::placeholder{
+		color:white;
+		font-weight: lighter;
+		font-size: 15px;
+	}
+	.hgt{
+		position: absolute;
+		width:250px;
+		height:50px;
+		top:250px;
+		left:47px;
+		border: none;
+		margin: 0px;
+		padding: 0px;
+		background-color:  rgba(242,92,42,1);
+		color:white;
+		font-size: 15px;
+		border-radius: 10%
+
+	}
+
+	
+	.wgt{
+		position: absolute;
+		width:250px;
+		height:50px;
+		top:320px;
+		left:47px;
+		border: none;
+		margin: 0px;
+		padding: 0px;
+		background-color: rgba(242,92,42,1);
+		color: white;
+		font-size: 15px;
+		border-radius: 10%
+	}
+	.but{
+		position: absolute;
+		width:100px;
+		height:50px;
+		top:390px;
+		left:117px;
+		border: none;
+		margin: 0px;
+		padding: 0px;
+		background-color: rgba(42,242,89,0.6);
+		color: white;
+		font-size: 15px;
+		border-radius: 10%
+	}
+	.res{
+		position: absolute;
+		top:5px;
+		left:3px;
+		margin:0px;
+		padding: 0px;
+		font-size: 50px;
+		color: rgb(192,31,46);
+	
+	}
+	#gender{
+		position: absolute;
+		margin:0px;
+		padding:0px;
+		color:white;
+		top:220px;
+		left:100px;
+	}
+	.value{
+		position: absolute;
+		
+		top:137px;
+		height:110px;
+		width:350px;
+		margin: 0px;
+		padding: 0px;
+	}
+	.image{
+		position: absolute;
+		
+		height:250px;
+		width:350px;
+		top:250px;
+		margin: 0px;
+		padding: 0px;
+
+	}
+	.div11{
+		position: absolute;
+		height:250px;
+		margin:0px;
+		padding: 0px;
+		left:110px;
+		top:0px;
+
+	}
+
+</style>
+
+<script>
+	function fun()
+	{	var heig=document.getElementById("hei").value;
+		heig=heig/100;
+		var weig=document.getElementById("wei").value;
+		if (document.getElementById('male').checked) 
+		{
+			var resu=(weig/(heig*heig));
+			if(resu<18.5)
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:yellow;'>"+"UNDERWEIGHT"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/men1.png'>";
+			}
+			else if((resu>=18.5) && (resu<=24.9))
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:green;'>"+"NORMAL"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/men2.png'>";
+			}
+			else if((resu>=25) && (resu<=29.9))
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:orange;'>"+"OVERWEIGHT"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/men3.png'>";
+	    	}
+			else if((resu>=30) && (resu<=34.9))
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:red;'>"+"OBESE"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/men4.png'>";
+			}
+			else
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:red;'>"+"EXTREMELY OBUSE"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/men5.png'>";
+			}
+		}
+		else 
+		{	
+			var resu=(weig/(heig*heig));
+			if(resu<18.5)
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:yellow;'>"+"UNDERWEIGHT"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/women1.png'>";
+			}
+			else if(resu>18.5 && resu<24.9)
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:green;'>"+"NORMAL"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/women2.png'>";
+			}
+			else if(resu>25 && resu<29.9)
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:orange;'>"+"OVERWEIGHT"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/women3.png'>";
+			}
+			else if(resu>30 && resu<34.9)
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:red;'>"+"OBESE"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/women4.png'>";
+			}
+			else
+			{
+				document.getElementById("result").innerHTML="<h3 style='color:red;'>"+"EXTREMELY OBUSE"+"</h3>";
+				document.getElementById("div3").innerHTML="<img class='div11' src='img/women5.png'>";
+			}
+		}
+
+	}
+		
+</script>
+</head>
+<body class="background">
+	<div class="sec1" id="div1">
+		<h1 class="bmi">BMI</h1><br>
+		<h1 class="cal">Calculator</h1>
+		<div id="gender">
+		<input type="radio" name="sex" id="male" >Male
+		<input type="radio" name="sex" id="female" >Female
+		</div>
+		<input class="hgt" id="hei" placeholder="       Enter your height in cm">
+		<input class="wgt" id="wei" placeholder="       Enter your weight in Kg">
+		<button class="but" id="buton" onclick="fun()">SUBMIT</button>
+	</div>
+
+	<div class="sec2" id="div2">
+		<h1 class="res">YOUR RESULT</h1><br>
+		<h3 class="value" id="result"></h3>
+		<div class="image" id="div3"></div>
+	</div>
+
+
+</body>
+</html>
